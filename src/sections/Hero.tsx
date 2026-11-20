@@ -3,6 +3,8 @@ import { athlete } from '../data/athlete'
 import { RevealImage } from '../components/RevealImage'
 
 export function Hero() {
+  const heroNote = athlete.demo ? 'Perfil demonstrativo' : athlete.hero.primary ? undefined : 'Retrato ilustrado'
+
   return (
     <>
       <section id="inicio" className="hero" tabIndex={-1} aria-labelledby="athlete-title">
@@ -18,8 +20,8 @@ export function Hero() {
           </svg>
           <div className="wide hero-layout">
             <div className="hero-copy">
-              <p className="eyebrow hero-eyebrow" data-hero-enter>Atleta de judô{athlete.demo && <span className="hero-demo">Perfil demonstrativo</span>}</p>
-              <h1 id="athlete-title" data-hero-enter>{athlete.firstName}<span>{athlete.lastName}</span></h1>
+              <p className="eyebrow hero-eyebrow" data-hero-enter>Atleta de judô{heroNote && <span className="hero-note">{heroNote}</span>}</p>
+              <h1 id="athlete-title" data-hero-enter>{athlete.firstName}{' '}<span>{athlete.lastName}</span></h1>
               <p className="hero-belt" data-hero-enter><i aria-hidden="true" /> Faixa {athlete.belt}</p>
             </div>
             <a className="scroll-link" href="#sobre"><ChevronDown size={19} aria-hidden="true" /> Conheça o atleta</a>

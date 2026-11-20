@@ -6,8 +6,11 @@ import { parseIsoDate, todayInBrazil } from '../lib/content'
 export function About() {
   const today = todayInBrazil()
   const birthDate = athlete.birthDate
-  const age = birthDate && parseIsoDate(birthDate) && (Number(today.slice(0, 4)) - Number(birthDate.slice(0, 4))
-    - Number(today.slice(5) < birthDate.slice(5)))
+  const age = birthDate && parseIsoDate(birthDate)
+    ? Number(today.slice(0, 4)) - Number(birthDate.slice(0, 4)) - Number(today.slice(5) < birthDate.slice(5))
+    : athlete.age
+  const practice = athlete.beganAtAge !== undefined ? `Desde os ${athlete.beganAtAge} anos`
+    : athlete.beganIn ? `Desde ${athlete.beganIn}` : undefined
 
   return (
     <section id="sobre" tabIndex={-1} className="paper section" aria-label="Sobre o atleta">
@@ -30,9 +33,10 @@ export function About() {
             <div><dt>Nome completo</dt><dd>{athlete.fullName}</dd></div>
             {athlete.city && <div><dt>Cidade</dt><dd>{[athlete.city, athlete.state].filter(Boolean).join(', ')}</dd></div>}
             {athlete.division && <div><dt>Categoria</dt><dd>{athlete.division}</dd></div>}
+            {athlete.nextDivision && <div><dt>Categoria em {athlete.nextDivision.year}</dt><dd>{athlete.nextDivision.label}</dd></div>}
             <div><dt>Graduação</dt><dd>Faixa {athlete.belt}</dd></div>
             {typeof age === 'number' && Number.isFinite(age) && age >= 0 && <div><dt>Idade</dt><dd>{age} anos</dd></div>}
-            {athlete.beganIn && <div><dt>No judô</dt><dd>Desde {athlete.beganIn}</dd></div>}
+            {practice && <div><dt>No judô</dt><dd>{practice}</dd></div>}
             {athlete.team && <div><dt>Equipe</dt><dd>{athlete.team}</dd></div>}
           </dl>
         </div>

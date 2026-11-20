@@ -1,6 +1,6 @@
 # Portfólio de judô
 
-Site estático de uma página para apresentar o atleta, divulgar resultados e competições e receber propostas de patrocínio. O conteúdo inicial de Cristian Alves é demonstrativo. Os retratos e as composições da galeria são ilustrações vetoriais originais.
+Site estático de uma página para apresentar Cristian Domingos Costa, divulgar resultados e competições e receber propostas de patrocínio. Até cadastrar as fotos, o site exibe retratos e composições vetoriais.
 
 ## Desenvolvimento local
 
@@ -15,9 +15,9 @@ Abra o endereço **Local** exibido pelo Vite, normalmente `http://localhost:5173
 
 ## Dados do atleta
 
-Edite [src/data/athlete.ts](src/data/athlete.ts). Altere `firstName`, `lastName` e `fullName` para configurar o nome no Hero, no perfil e no rodapé. Atualize também `seo.title`, `seo.description` e `contact.subject`. Configure `city`, `state`, `division`, `team`, `beganIn`, `quote`, `bio` e `goals`. Use `birthDate` no formato `AAAA-MM-DD` para exibir a idade calculada.
+Edite [src/data/athlete.ts](src/data/athlete.ts). Altere `firstName`, `lastName` e `fullName` para configurar o nome no Hero, no perfil e no rodapé. Atualize também `seo.title`, `seo.description` e `contact.subject`. Configure `city`, `state`, `division`, `team`, `quote`, `bio` e `goals`. Os campos `nextDivision` e `beganAtAge` permitem indicar a categoria planejada e a idade em que o atleta começou. Use `age` para informar diretamente a idade exibida ou `birthDate` no formato `AAAA-MM-DD` para calculá-la.
 
-Os exemplos de resultados, trajetória e galeria estão em [src/data/demo.ts](src/data/demo.ts). Substitua `...demoContent` pelas listas oficiais `results`, `timeline` e `gallery`. Ajuste `demo: false` quando concluir a troca dos dados demonstrativos.
+Os resultados e a trajetória ficam nas listas `results` e `timeline`. Os itens ilustrativos da galeria estão em [src/data/demo.ts](src/data/demo.ts). Substitua `gallery: demoGallery` pela sua lista de fotos e vídeos quando tiver os arquivos.
 
 ### Tema e graduação
 
@@ -106,8 +106,8 @@ Exemplos de objetos para as listas de dados. Substitua todos os campos pelas inf
   status: 'Previsto' }
 ```
 
-- `results[].placement` aceita `1`, `2`, `3` ou `'participação'`. Os contadores derivam da lista. Use o mesmo `competitionId` quando cadastrar vários resultados na mesma competição. `featured: true` destaca um título de primeiro lugar.
-- Cada marco de `timeline` aceita `photo` opcional.
+- `results[].placement` aceita a colocação numérica, como `5`, ou `'participação'`. `featured: true` destaca o resultado e `bracketSize` informa quantos atletas havia na chave. Use o mesmo `competitionId` quando cadastrar vários resultados na mesma competição.
+- Use `year` em resultados e marcos quando souber o ano. Se algum marco estiver sem ano, mantenha a lista `timeline` na ordem em que quer exibi-la. Cada marco aceita `photo` opcional.
 - Informe as datas reais em `events`. Os status aceitos são `Confirmado`, `Previsto` e `Concluído`. A agenda ordena os eventos por data e separa as competições futuras das anteriores.
 
 ## Patrocínio e canais oficiais

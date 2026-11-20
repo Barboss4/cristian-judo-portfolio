@@ -1,24 +1,27 @@
 import type { Athlete } from '../types/athlete'
-import { demoContent } from './demo'
+import { demoGallery } from './demo'
 
 export const athlete: Athlete = {
   firstName: 'Cristian',
-  lastName: 'Alves',
-  fullName: 'Cristian Alves',
-  demo: true,
-  city: 'São Paulo',
-  state: 'SP',
-  division: '−73 kg',
+  lastName: 'Domingos Costa',
+  fullName: 'Cristian Domingos Costa',
+  demo: false,
+  city: 'Anápolis',
+  state: 'GO',
+  division: 'Sub-18 · até 60 kg',
+  nextDivision: { year: 2027, label: 'Sub-21 e Sênior · até 60 kg' },
   belt: 'roxa',
   beltColor: '#8164A5',
-  beganIn: 2021,
-  team: '',
-  quote: 'Disciplina. Técnica. Evolução.',
+  age: 17,
+  beganAtAge: 4,
+  team: 'Associação Esportiva Ippon',
+  quote: 'Só você pode decidir seu próximo passo!',
   bio: [
-    'Cristian encontrou no judô um esporte em que a precisão vale tanto quanto a força. No tatame, desenvolve seu repertório de técnicas, aprende a ler cada luta e leva essas lições para o treino seguinte.',
-    'Faixa roxa, dedica-se à rotina de treinos e à preparação para competir na categoria até 73 kg.',
+    'Desde criança, sempre gostei de me movimentar. Pratiquei vários esportes e aprendi a me adaptar rápido. O judô mudou minha vida e me mostrou um caminho que eu ainda não enxergava. Foi o esporte que escolhi seguir e que mais gosto de praticar.',
+    'Comecei na Liga de Judô em Jataí, onde aprendi os fundamentos e descobri o quanto queria continuar no tatame.',
+    'Em 2024, me mudei para Anápolis e cheguei a achar que teria de deixar o judô. Quando vi uma postagem da Associação Esportiva Ippon, procurei a equipe e me inscrevi. Hoje sou federado e faço parte da equipe de competição.',
   ],
-  goals: 'Consolidar a técnica em competição e evoluir no circuito estadual.',
+  goals: 'Quero conquistar medalhas nas etapas regional e final do Campeonato Brasileiro pelo Sub-21 e começar uma carreira internacional.',
   hero: {
     radius: 165,
     feather: 34,
@@ -27,19 +30,54 @@ export const athlete: Athlete = {
     // primary: { src: 'images/hero/treino.webp', alt: 'Cristian com judogi branco' },
     // alternate: { src: 'images/hero/competicao.webp', alt: 'Cristian com judogi azul' },
   },
-  // Substitua os exemplos por registros oficiais e ajuste demo para false.
-  ...demoContent,
+  results: [
+    {
+      id: 'brasileiro-regional-ji-parana',
+      name: 'Campeonato Brasileiro Regional',
+      location: 'Ji-Paraná, RO',
+      placement: 5,
+      bracketSize: 35,
+      featured: true,
+    },
+  ],
+  timeline: [
+    {
+      id: 'inicio-jatai',
+      title: 'Primeiros treinos em Jataí',
+      description: 'Comecei a treinar aos 4 anos na Liga de Judô em Jataí. Foi lá que aprendi os fundamentos do esporte.',
+      type: 'Início no judô',
+    },
+    {
+      id: 'mudanca-anapolis',
+      year: 2024,
+      title: 'Mudança para Anápolis',
+      description: 'Depois da mudança, encontrei a Associação Esportiva Ippon. Passei a treinar lá e hoje faço parte da equipe de competição.',
+      type: 'Trajetória',
+    },
+    {
+      id: 'estreia-pela-federacao',
+      title: 'Brasileiro Regional em Ji-Paraná',
+      description: 'Foi minha primeira competição representando a federação goiana, em uma nova categoria e em um novo peso.',
+      type: 'Competição marcante',
+    },
+  ],
+  gallery: demoGallery,
   events: [],
   sponsors: [],
   contact: {
-    subject: 'Proposta de patrocínio | Cristian Alves',
+    subject: 'Proposta de patrocínio | Cristian Domingos Costa',
     message: 'Olá, Cristian! Gostaria de conversar sobre uma proposta de patrocínio.',
-    socials: [],
+    instagram: 'https://www.instagram.com/c.costa.d/',
+    socials: [
+      { label: 'TikTok', url: 'https://www.tiktok.com/@c.costa.ippon' },
+      { label: 'X', url: 'https://x.com/ristiandojztm' },
+      { label: 'YouTube', url: 'https://www.youtube.com/@C.COSTA.D' },
+    ],
   },
   seo: {
-    title: 'Cristian Alves | Atleta de Judô',
-    description: 'Conheça o portfólio demonstrativo de Cristian Alves, com trajetória no judô, resultados, galeria e oportunidades de patrocínio.',
-    image: 'images/hero/compartilhamento.png',
+    title: 'Cristian Domingos Costa | Atleta de Judô',
+    description: 'Conheça a trajetória e os resultados de Cristian Domingos Costa, atleta de judô da Associação Esportiva Ippon, em Anápolis (GO).',
+    image: 'images/hero/compartilhamento-cristian.png',
     siteUrl: 'https://barboss4.github.io/cristian-judo-portfolio/',
   },
 }

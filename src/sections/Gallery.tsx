@@ -20,7 +20,7 @@ export function Gallery() {
       <div className="gallery-scene">
         <div className="wide gallery-header">
           <SectionHeading label="Galeria" title="O judô em imagens.">
-            {athlete.demo && <p className="demo-note">Acervo ilustrativo</p>}
+            {(athlete.demo || items.some((item) => !item.photo && !item.video)) && <p className="demo-note">Acervo ilustrativo</p>}
           </SectionHeading>
           {categories.length > 1 && <div className="gallery-filters" aria-label="Filtrar mídia por categoria" role="group">
             <button type="button" aria-pressed={!category} onClick={() => setCategory('')}>Todas</button>
