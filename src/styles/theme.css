@@ -1,0 +1,25 @@
+:root {
+  --sumi: #101415;
+  --judogi: #f2efe7;
+  --indigo: #263d59;
+  --bronze: #bd916c;
+  --muted: #b6b4af;
+  --belt-color: #8164a5;
+  --surface: #171d20;
+  --dark-rule: #ffffff25;
+  --paper-rule: #1014152b;
+  --paper-muted: #505651;
+  --font-copy: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+  --header-height: 74px;
+  --page-width: 1360px;
+  --gutter: clamp(1.25rem, 5.1vw, 6.25rem);
+  --section-space: clamp(4.75rem, 9vw, 9.25rem);
+  --ui-transition: 210ms ease;
+  --hero-shade: linear-gradient(90deg, var(--sumi), #101415bc 16%, #10141522 38%, transparent 57%, #10141527 100%);
+  --hero-bottom: linear-gradient(0deg, #101415e8, #1014152e 24%, transparent 53%);
+  --hero-scroll-surface: radial-gradient(ellipse at 55% 45%, #263d5999, transparent 72%),
+    repeating-linear-gradient(0deg, transparent 0 5px, #d6e2f00b 5px 6px),
+    linear-gradient(125deg, #12191f, #101415);
+  --paper-texture: repeating-linear-gradient(0deg, transparent 0 3px, #263d5907 3px 4px);
+}
