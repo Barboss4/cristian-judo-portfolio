@@ -51,7 +51,8 @@ export function Lightbox({ item, index, total, onClose, onStep }: Props) {
         <div className="lightbox-media" key={item.id}>
           {embedUrl ? <iframe title={item.title} src={embedUrl} allow="fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
             : item.video?.type === 'file' && item.video.url
-              ? <video controls playsInline preload="metadata" src={assetUrl(item.video.url)} aria-label={item.title} />
+              ? <video controls playsInline preload="metadata" src={assetUrl(item.video.url)}
+                  poster={item.photo ? assetUrl(item.photo.src) : undefined} aria-label={item.title} />
               : <ImagePlaceholder photo={item.photo} illustration={item.illustration ?? galleryIllustrations[item.category]} alt={item.title} eager />}
         </div>
         <div className="lightbox-footer">

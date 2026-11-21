@@ -1,5 +1,4 @@
 import type { Athlete } from '../types/athlete'
-import { demoGallery } from './demo'
 
 export const athlete: Athlete = {
   firstName: 'Cristian',
@@ -15,6 +14,11 @@ export const athlete: Athlete = {
   age: 17,
   beganAtAge: 4,
   team: 'Associação Esportiva Ippon',
+  portrait: {
+    src: 'images/athlete/cristian-retrato.webp',
+    alt: 'Cristian de judogi azul, com as mãos na faixa roxa',
+    position: '50% 25%',
+  },
   quote: 'Só você pode decidir seu próximo passo!',
   bio: [
     'Desde criança, sempre gostei de me movimentar. Pratiquei vários esportes e aprendi a me adaptar rápido. O judô mudou minha vida e me mostrou um caminho que eu ainda não enxergava. Foi o esporte que escolhi seguir e que mais gosto de praticar.',
@@ -27,8 +31,16 @@ export const athlete: Athlete = {
     feather: 34,
     smoothing: 0.30,
     transition: 0.32,
-    // primary: { src: 'images/hero/treino.webp', alt: 'Cristian com judogi branco' },
-    // alternate: { src: 'images/hero/competicao.webp', alt: 'Cristian com judogi azul' },
+    primary: {
+      src: 'images/hero/cristian-judogi.webp',
+      alt: 'Cristian em pé no tatame com judogi azul e faixa roxa',
+      position: '50% 28%',
+    },
+    alternate: {
+      src: 'images/hero/cristian-roupa-de-treino.webp',
+      alt: 'Cristian em pé no tatame com roupa de treino preta',
+      position: '50% 28%',
+    },
   },
   results: [
     {
@@ -53,6 +65,11 @@ export const athlete: Athlete = {
       title: 'Mudança para Anápolis',
       description: 'Depois da mudança, encontrei a Associação Esportiva Ippon. Passei a treinar lá e hoje faço parte da equipe de competição.',
       type: 'Trajetória',
+      photo: {
+        src: 'images/athlete/cristian-equipe.webp',
+        alt: 'Cristian de costas com a identificação C. Costa e BRA no judogi',
+        position: '50% 34%',
+      },
     },
     {
       id: 'estreia-pela-federacao',
@@ -61,7 +78,76 @@ export const athlete: Athlete = {
       type: 'Competição marcante',
     },
   ],
-  gallery: demoGallery,
+  gallery: [
+    {
+      id: 'olhar-no-tatame',
+      category: 'Competições',
+      title: 'Olhar no tatame',
+      photo: { src: 'images/gallery/olhar-no-tatame.webp', alt: 'Cristian caminha de judogi azul', position: '50% 27%' },
+    },
+    {
+      id: 'preparacao-no-tatame',
+      category: 'Treinos',
+      title: 'Preparação no tatame',
+      photo: { src: 'images/gallery/preparacao-no-tatame.webp', alt: 'Cristian olha para a faixa roxa no tatame vermelho', position: '50% 45%' },
+    },
+    {
+      id: 'medalha-no-tatame',
+      category: 'Pódios',
+      title: 'Medalha no tatame',
+      photo: { src: 'images/gallery/medalha-no-tatame.webp', alt: 'Cristian ajoelhado de costas, segurando a fita de uma medalha', position: '50% 36%' },
+    },
+    {
+      id: 'bastidores-do-tatame',
+      category: 'Bastidores',
+      title: 'No tatame',
+      photo: { src: 'images/gallery/bastidores-do-tatame.webp', alt: 'Cristian ajoelhado no tatame vermelho com roupa de treino preta', position: '50% 56%' },
+    },
+    {
+      id: 'entrada-no-tatame',
+      category: 'Competições',
+      title: 'Entrada no tatame',
+      photo: { src: 'images/gallery/entrada-no-tatame.webp', alt: 'Cristian de judogi branco à beira da área de luta', position: '50% 53%' },
+    },
+    {
+      id: 'saudacao',
+      category: 'Competições',
+      title: 'Saudação',
+      photo: { src: 'images/gallery/saudacao.webp', alt: 'Cristian inclina o corpo em saudação com o judogi branco', position: '50% 56%' },
+    },
+    {
+      id: 'combate',
+      category: 'Competições',
+      title: 'Combate no tatame',
+      photo: { src: 'images/gallery/combate-capa.webp', alt: 'Dois judocas se movimentam durante o combate', position: '50% 44%' },
+      video: { url: 'images/gallery/combate.mp4', type: 'file' },
+    },
+    {
+      id: 'medalha-faixa-verde',
+      category: 'Pódios',
+      title: 'Comemoração na faixa verde',
+      photo: { src: 'images/gallery/medalha-faixa-verde.webp', alt: 'Cristian comemora com uma medalha e a faixa verde', position: '50% 88%' },
+    },
+    {
+      id: 'medalhas-de-judogi-branco',
+      category: 'Pódios',
+      title: 'Medalhas no ginásio',
+      photo: { src: 'images/gallery/medalhas-de-judogi-branco.webp', alt: 'Cristian posa de judogi branco com suas medalhas', position: '50% 24%' },
+    },
+    {
+      id: 'olhar-para-a-medalha',
+      category: 'Pódios',
+      title: 'De olho na medalha',
+      photo: { src: 'images/gallery/olhar-para-a-medalha.webp', alt: 'Cristian de judogi azul olha para a medalha que segura', position: '50% 33%' },
+    },
+    {
+      id: 'abraco-pos-luta',
+      category: 'Bastidores',
+      title: 'Abraço após a luta',
+      photo: { src: 'images/gallery/abraco-pos-luta-capa.webp', alt: 'Dois judocas se abraçam no tatame', position: '50% 49%' },
+      video: { url: 'images/gallery/abraco-pos-luta.mp4', type: 'file' },
+    },
+  ],
   events: [],
   sponsors: [],
   contact: {
@@ -77,7 +163,7 @@ export const athlete: Athlete = {
   seo: {
     title: 'Cristian Domingos Costa | Atleta de Judô',
     description: 'Conheça a trajetória e os resultados de Cristian Domingos Costa, atleta de judô da Associação Esportiva Ippon, em Anápolis (GO).',
-    image: 'images/hero/compartilhamento-cristian.png',
+    image: 'images/hero/cristian-compartilhamento.jpg',
     siteUrl: 'https://barboss4.github.io/cristian-judo-portfolio/',
   },
 }
