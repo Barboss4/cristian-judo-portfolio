@@ -31,9 +31,9 @@ export function Gallery() {
           <div className="gallery-grid">
             {items.map((item, index) => (
               <button className="gallery-tile" type="button" key={item.id} onClick={() => setOpen(index)} aria-haspopup="dialog">
-                <ImagePlaceholder photo={item.photo} illustration={item.illustration ?? galleryIllustrations[item.category]} />
+                <ImagePlaceholder photo={item.photo} illustration={item.illustration ?? galleryIllustrations[item.category]} alt={item.title} />
                 <span className="tile-overlay">
-                  <span><small>{item.category}</small><strong>{item.title}</strong></span>
+                  <span><small>{item.category}</small>{item.video && <strong>{item.title}</strong>}</span>
                   {item.video ? <Play size={21} aria-hidden="true" /> : <Maximize size={20} aria-hidden="true" />}
                 </span>
               </button>

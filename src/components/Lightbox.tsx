@@ -56,7 +56,13 @@ export function Lightbox({ item, index, total, onClose, onStep }: Props) {
               : <ImagePlaceholder photo={item.photo} illustration={item.illustration ?? galleryIllustrations[item.category]} alt={item.title} eager />}
         </div>
         <div className="lightbox-footer">
-          <div aria-live="polite"><p className="eyebrow">{item.category} · {index + 1} de {total}</p><h3 id="lightbox-title">{item.title}</h3>{item.caption && <p>{item.caption}</p>}</div>
+          <div aria-live="polite">
+            <p className="eyebrow">{item.category} · {index + 1} de {total}</p>
+            <h3 id="lightbox-title" className={item.video ? undefined : 'sr-only'}>
+              {item.video ? item.title : item.photo?.alt || item.title}
+            </h3>
+            {item.caption && <p>{item.caption}</p>}
+          </div>
           {total > 1 && <div className="lightbox-controls">
             <button type="button" className="icon-button" onClick={() => onStep(-1)} aria-label="Mídia anterior"><ChevronLeft aria-hidden="true" /></button>
             <button type="button" className="icon-button" onClick={() => onStep(1)} aria-label="Próxima mídia"><ChevronRight aria-hidden="true" /></button>
